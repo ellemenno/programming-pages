@@ -10,13 +10,13 @@ layout: compress
 
 {% include scripts/mousetrap/mousetrap-1.6.1.min.js %}
 
-{% include scripts/semantic-ui/_version.js %}
-{% include scripts/semantic-ui/site.min.js %}
+{% include scripts/fomantic-ui/_version.js %}
+{% include scripts/fomantic-ui/site.min.js %}
 
-{% include scripts/semantic-ui/dimmer.min.js %}
-{% include scripts/semantic-ui/modal.min.js %}
-{% include scripts/semantic-ui/search.min.js %}
-{% include scripts/semantic-ui/sidebar.min.js %}
-{% include scripts/semantic-ui/sticky.min.js %}
-{% include scripts/semantic-ui/tab.min.js %}
-{% include scripts/semantic-ui/transition.min.js %}
+{% include scripts/fomantic-ui/dimmer.min.js %}
+{% include scripts/fomantic-ui/modal.min.js %}
+{% include scripts/fomantic-ui/search.min.js %}
+{% include scripts/fomantic-ui/sidebar.min.js %}
+{% include scripts/fomantic-ui/sticky.min.js %}
+{% include scripts/fomantic-ui/tab.min.js %}
+{% include scripts/fomantic-ui/transition.min.js %}

@@ -1,43 +1,59 @@
 ---
-layout: compress
+
 ---
 
-{% comment %} #TODO: use sass distribution of SUI {% endcomment %}
+{% comment %}
+SCSS variables can be assigned different values at different times during their life-span and scope.
+This can be problematic if you want use of a consistent value, but also want to allow customization.
+SASS handles this with the !default flag, which prevents assignment to a variable if it already has a value.
 
-{% include styles/semantic-ui/_version.css %}
-{% include styles/semantic-ui/site.min.css %}
-{% include styles/semantic-ui/reset.min.css %}
+The programming-pages theme uses !default flags on all variable declarations to give users a chance
+to customize any theme value. Any value not defined by the user will be filled in by the theme.
 
-{% include styles/semantic-ui/breadcrumb.min.css %}
-{% include styles/semantic-ui/container.min.css %}
-{% include styles/semantic-ui/dimmer.min.css %}
-{% include styles/semantic-ui/divider.min.css %}
-{% include styles/semantic-ui/grid.min.css %}
-{% include styles/semantic-ui/header.min.css %}
-{% include styles/semantic-ui/image.min.css %}
-{% include styles/semantic-ui/input.min.css %}
-{% include styles/semantic-ui/item.min.css %}
-{% include styles/semantic-ui/label.min.css %}
-{% include styles/semantic-ui/list.min.css %}
-{% include styles/semantic-ui/menu.min.css %}
-{% include styles/semantic-ui/message.min.css %}
-{% include styles/semantic-ui/modal.min.css %}
-{% include styles/semantic-ui/rail.min.css %}
-{% include styles/semantic-ui/search.min.css %}
-{% include styles/semantic-ui/segment.min.css %}
-{% include styles/semantic-ui/sidebar.min.css %}
-{% include styles/semantic-ui/sticky.min.css %}
-{% include styles/semantic-ui/tab.min.css %}
-{% include styles/semantic-ui/table.min.css %}
-{% include styles/semantic-ui/transition.min.css %}
+User customizations are included from _sass/custom/_variables.scss
+{% endcomment %}
 
-@import "emoji";
-@import "kbd";
-@import "svg-icons";
-@import "syntax";
+@import 'custom/variables';                   {% comment %}user variables{% endcomment %}
+@import 'programming-pages/variables';        {% comment %}theme variables{% endcomment %}
 
-{% comment %} not scss, needs liquid processing {% endcomment %}
+{% include styles/fomantic-ui/_version.css %}
+@import 'fomantic-ui/globals/variables';      {% comment %}framework variables{% endcomment %}
+@import 'fomantic-ui/globals/reset';
+@import 'fomantic-ui/globals/site';
+
+@import 'fomantic-ui/elements/container';
+@import 'fomantic-ui/elements/divider';
+@import 'fomantic-ui/elements/header';
+@import 'fomantic-ui/elements/image';
+@import 'fomantic-ui/elements/input';
+@import 'fomantic-ui/elements/label';
+@import 'fomantic-ui/elements/list';
+@import 'fomantic-ui/elements/rail';
+@import 'fomantic-ui/elements/segment';
+
+@import 'fomantic-ui/collections/breadcrumb';
+@import 'fomantic-ui/collections/grid';
+@import 'fomantic-ui/collections/menu';
+@import 'fomantic-ui/collections/message';
+@import 'fomantic-ui/collections/table';
+
+@import 'fomantic-ui/views/item';
+
+@import 'fomantic-ui/modules/dimmer';
+@import 'fomantic-ui/modules/modal';
+@import 'fomantic-ui/modules/search';
+@import 'fomantic-ui/modules/sidebar';
+@import 'fomantic-ui/modules/sticky';
+@import 'fomantic-ui/modules/tab';
+@import 'fomantic-ui/modules/transition';
+
+@import 'emoji';
+@import 'kbd';
+@import 'svg-icons';
+@import 'syntax';
+
+{% comment %} theme overrides {% endcomment %}
 {% include styles/programming-pages/tweaks.css %}
 
-{% comment %} provide user extension / override point {% endcomment %}
+{% comment %} provide user overrides / extensions {% endcomment %}
 {% include styles/custom.css %}

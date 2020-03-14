@@ -2,5 +2,12 @@
  * CSS customizations
  *
  * this file is included after all other stye sheet files
- * you can add rules here that will take precedence over any already defined by the theme
+ * you can add rules here that will take precedence over any already defined by the theme or underlying framework
+ *
+ * this file will be processed by SASS
+ * you can refer to variables declared by:
+ *   you               (see _sass/custom)
+ *   the theme         (see _sass/programming-pages)
+ *   the css framework (see _sass/fomantic-ui)
+*  see assets/site.scss for the complete list of variable imports that can be overridden
  */
