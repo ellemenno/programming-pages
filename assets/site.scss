@@ -13,11 +13,11 @@ to customize any theme value. Any value not defined by the user will be filled i
 User customizations are included from _sass/custom/_variables.scss
 {% endcomment %}
 
-@import 'custom/variables';                   {% comment %}user variables{% endcomment %}
-@import 'programming-pages/variables';        {% comment %}theme variables{% endcomment %}
+@import 'custom/variables';                   {% comment %} user variables {% endcomment %}
+@import 'programming-pages/variables';        {% comment %} theme variables {% endcomment %}
 
-{% include styles/fomantic-ui/_version.css %}
-@import 'fomantic-ui/globals/variables';      {% comment %}framework variables{% endcomment %}
+@import 'fomantic-ui/version';
+@import 'fomantic-ui/globals/variables';      {% comment %} framework variables {% endcomment %}
 @import 'fomantic-ui/globals/reset';
 @import 'fomantic-ui/globals/site';
 
@@ -52,8 +52,9 @@ User customizations are included from _sass/custom/_variables.scss
 @import 'svg-icons';
 @import 'syntax';
 
-{% comment %} theme overrides {% endcomment %}
-{% include styles/programming-pages/tweaks.css %}
+{% comment %} calculate top of indices tab segment to fit under n rendered collections {% endcomment %}
+{% assign n = 0 %}{% for c in site.collections %}{% unless c.label == 'posts' or c.docs.size == 0 %}{% assign n = n | plus: 1 %}{% endunless %}{% endfor %}
+$indices-top: {{ n | minus: 1 | times: 1.5 | plus: 5 }}rem; {% comment %} 1 -> 5 , 2 -> 6.5 , 3 -> 8 , .. {% endcomment %}
 
-{% comment %} provide user overrides / extensions {% endcomment %}
-{% include styles/custom.css %}
+@import 'programming-pages/styles'; {% comment %} theme style overrides {% endcomment %}
+@import 'custom/styles';            {% comment %} user style overrides {% endcomment %}
