@@ -13,7 +13,7 @@ The programming pages theme provides the css, javascript, and [Jekyll][ghjekyll]
 This guide describes the folder structure, layouts, and include files used by the theme.
 {:.larger.text}
 
-> You don't need to understand these files in order to successfully [author content][authoring-documentation]. This documentation may be useful for those who wish to modify (or [correct][reporting-issues]) how the theme works.
+> You don't need to understand these files in order to successfully [author content][authoring-documentation]. This documentation may be useful for those who wish to modify ([improve?][reporting-issues]) how the theme works.
 
 - TOC
 {::options toc_levels="2,3" /}
@@ -24,16 +24,17 @@ This guide describes the folder structure, layouts, and include files used by th
 
 The programming pages theme comprises the following main pieces, discussed in detail in the sections below:
 
-    ├─_config.yml       / project data and config values for Jekyll
-    ├─_data/            / svg icon definitions
-    ├─_includes/        / liquid partials
-    │ ├─elements/       / html partials used in layouts
-    │ ├─scripts/        / js partials and libraries used in layouts
-    │ ├─styles/         / css used in layouts
-    │ │ ├─semantic-ui/  / css framework files
-    │ └─themes/         / css theme files
-    ├─_layouts/         / Jekyll page layouts
-    └─assets/           / javascript and css aggregated files
+    ├─_config.yml           / project data and config values for Jekyll
+    ├─_data/                / svg icon definitions
+    ├─_includes/            / liquid partials
+    │ ├─elements/           / html partials used in layouts
+    │ └─scripts/            / js partials and libraries used in layouts
+    ├─_layouts/             / Jekyll page templates
+    ├─_sass/                / css partials
+    │ ├─custom/             / user customizations of css
+    │ ├─fomantic-ui/        / framework css definitions
+    │ └─programming-pages/  / theme css definitions
+    └─assets/               / javascript and css aggregated files
 
 User authored content should include a homepage and some combination of API documentation, examples, and/or guides:
 
@@ -151,13 +152,13 @@ Pages often utilize [liquid][liquid] templates to process lists of data into htm
 
 Each of the theme features has an accompanying javascript partial that is defined under `_includes/scripts` and included by the [page][layout-page] layout.
 
-Global scripts like the [jQuery][jquery] and [Semantic UI][semantic-ui] libraries are stored under their own folders in the `_includes/` directory, are aggregated by `assets/site.js`, and are included by the [base][layout-base] layout.
+Global scripts like the [jQuery][jquery] and [Fomantic UI][fomantic-ui] libraries are stored under their own folders in the `_includes/` directory, are aggregated by `assets/site.js`, and are included by the [base][layout-base] layout.
 
 ### Styles
 
-Programming pages uses portions of the [Semantic UI][semantic-ui] framework for styling and navigation. The components used are stored under `_includes/styles/semantic-ui`, are aggregated by `assets/site.css`, and are included by the [base][layout-base] layout.
+Programming pages uses portions of the [Fomantic UI][fomantic-ui] framework for styling and navigation. The components used are stored under `_sass/fomantic-ui`, are aggregated by `assets/site.scss`, and are included by the [base][layout-base] layout.
 
-Also under `_includes/styles/` are the css customizations unique to the programming pages theme.
+Also under `_sass/` are the css definitions for the programming pages theme, and an extension point for user customizations (`_sass/custom/`).
 
 ### SVG Icons
 
@@ -171,6 +172,7 @@ In `_data/icons/theme.yml` are the [svg icon][svg-icons] definitions used by the
 [feature-help]: {{site.baseurl}}/guides/Theme-Features/#help-overlay "help feature"
 [feature-search]: {{site.baseurl}}/guides/Theme-Features/#search-input "search feature"
 [feature-title]: {{site.baseurl}}/guides/Theme-Features/#title-bar "title bar feature"
+[fomantic-ui]: https://fomantic-ui.com/ "Semantic UI css and javascript framework"
 [ghjekyll]: https://help.github.com/articles/using-jekyll-as-a-static-site-generator-with-github-pages/ "Using Jekyll as a static site generator with GitHub Pages"
 [ghpages-jekyll-remote-theme]: https://github.com/benbalter/jekyll-remote-theme "Jekyll plugin for building Jekyll sites with any GitHub-hosted theme"
 [ghpages-jemoji]: https://help.github.com/articles/emoji-on-github-pages/ "Emoji on GitHub Pages"
@@ -185,6 +187,5 @@ In `_data/icons/theme.yml` are the [svg icon][svg-icons] definitions used by the
 [layout-compress]: {{site.baseurl}}/layout_api/compress/#/layout_api/ "compress layout"
 [layout-page]: {{site.baseurl}}/layout_api/page/#/layout_api/ "page layout"
 [liquid]: http://shopify.github.io/liquid/ "Liquid is an open-source template language used by Jekyll"
-[semantic-ui]: https://semantic-ui.com/ "Semantic UI css and javascript framework"
 [reporting-issues]: {{site.baseurl}}/guides/Reporting-Issues-and-Contributing/#/guides/ "Reporting issues and contributing"
 [svg-icons]: {{site.baseurl}}/examples/sampler/#icons "SVG icons provided by the programming pages theme"

@@ -15,7 +15,7 @@ order: 1
 - ready-to-use [layouts](#/layout_api), extensible to create new ones
 - [searchable content](#search-input), with keyboard shortcuts (try `h`)
 - mobile-ready design browsable on multiple devices
-- styling for readability, leveraging [Semantic UI][semantic-ui]
+- styling for readability, leveraging [semantic css][fomantic-ui]
 - clean site generation that scores well on [Lighthouse][lighthouse] audits
 - compatibility with [GitHub Pages][ghpages] for free hosting and simple publishing
 {:.larger.text}
@@ -92,4 +92,4 @@ Please see the individual layout pages for more detail:
 [homepage]: {{site.baseurl}}/guides/Authoring-Documentation/#homepage "User-authored homepage"
 [liquid]: https://shopify.github.io/liquid/ "Safe, customer-facing template language for flexible web apps"
 [lighthouse]: https://developers.google.com/web/tools/lighthouse/ "Lighthouse is an open-source, automated tool for improving the quality of web pages"
-[semantic-ui]: https://semantic-ui.com/ "Semantic is a development framework that helps create beautiful, responsive layouts using human-friendly HTML"
+[fomantic-ui]: https://fomantic-ui.com/ "A community fork of Semantic-UI, a development framework that helps create beautiful, responsive layouts using human-friendly HTML"
